@@ -148,6 +148,12 @@ def initialize_agent_executor():
             name = ct.SEARCH_WEB_INFO_TOOL_NAME,
             func=search.run,
             description=ct.SEARCH_WEB_INFO_TOOL_DESCRIPTION
+        ),
+        # 全文検索用のTool（すべてのドキュメントから横断的に検索するRAG Chain）
+        Tool(
+            name=ct.SEARCH_ALL_DOCS_TOOL_NAME,
+            func=utils.run_rag_chain,
+            description=ct.SEARCH_ALL_DOCS_TOOL_DESCRIPTION
         )
     ]
 
